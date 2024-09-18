@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date and Time</title>
+    <script>
+        function updateDateTime() {
+            var dateTimeElement = document.getElementById('datetime');
+            var currentDate = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            var formattedDate = currentDate.toLocaleDateString('en-US', options);
+            dateTimeElement.textContent = formattedDate;
+        }
+
+        // Update the date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body>
+    <h1>Current Date and Time:</h1>
+    <p id="datetime"></p>
+</body>
+</html>
